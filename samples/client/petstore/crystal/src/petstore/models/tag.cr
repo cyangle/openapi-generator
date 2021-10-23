@@ -24,7 +24,7 @@ module Petstore
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(@id : Int64?, @name : String?)
+    def initialize(@id : Int64? = nil, @name : String? = nil)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
