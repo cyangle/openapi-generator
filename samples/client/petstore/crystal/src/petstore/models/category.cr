@@ -16,6 +16,7 @@ module Petstore
   class Category
     include JSON::Serializable
 
+
     @[JSON::Field(key: "id", type: Int64?)]
     property id : Int64?
 

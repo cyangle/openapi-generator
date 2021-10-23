@@ -16,6 +16,7 @@ module Petstore
   class ApiResponse
     include JSON::Serializable
 
+
     @[JSON::Field(key: "code", type: Int32?)]
     property code : Int32?
 

@@ -16,6 +16,7 @@ module Petstore
   class Tag
     include JSON::Serializable
 
+
     @[JSON::Field(key: "id", type: Int64?)]
     property id : Int64?
 
