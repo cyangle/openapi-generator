@@ -52,7 +52,7 @@ public class CodegenParameter implements IJsonSchemaValidationProperties {
     public boolean hasValidation;
     public boolean isNullable;
     public boolean isDeprecated;
-    private CodegenProperty schema;
+    public CodegenProperty schema;
     /**
      * Determines whether this parameter is mandatory. If the parameter is in "path",
      * this property is required and its value MUST be true. Otherwise, the property

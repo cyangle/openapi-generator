@@ -3420,7 +3420,7 @@ public class DefaultCodegen implements CodegenConfig {
      */
     public CodegenProperty fromProperty(String name, Schema p) {
         if (p == null) {
-            LOGGER.error("Undefined property/schema for `{}`. Default to type:string.", name);
+            LOGGER.error("Undefined property/schema for `{}`, `{}`. Default to type:string.", name, p);
             return null;
         }
         LOGGER.debug("debugging fromProperty for {} : {}", name, p);

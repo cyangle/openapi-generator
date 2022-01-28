@@ -595,8 +595,18 @@ public class CrystalClientCodegen extends DefaultCodegen {
 
     private String constructExampleCode(CodegenParameter codegenParameter, HashMap<String, CodegenModel> modelMaps, HashMap<String, Integer> processedModelMap) {
         if (codegenParameter.isArray) { // array
+            if (codegenParameter.items == null) {
+                LOGGER.info("constructExampleCode for Array: {}", codegenParameter);
+                LOGGER.info("end of constructExampleCode for Array");
+                return "[" + constructExampleCode(codegenParameter.schema.items, modelMaps, processedModelMap) + "]";
+            }
             return "[" + constructExampleCode(codegenParameter.items, modelMaps, processedModelMap) + "]";
         } else if (codegenParameter.isMap) {
+            if (codegenParameter.items == null) {
+                LOGGER.info("constructExampleCode for Map: {}", codegenParameter);
+                LOGGER.info("end of constructExampleCode for Map");
+                return "{}";
+            }
             return "{ key: " + constructExampleCode(codegenParameter.items, modelMaps, processedModelMap) + "}";
         } else if (codegenParameter.isPrimitiveType) { // primitive type
             if (codegenParameter.isEnum) {
